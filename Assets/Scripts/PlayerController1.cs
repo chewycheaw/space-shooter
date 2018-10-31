@@ -59,5 +59,8 @@ public class PlayerController1 : MonoBehaviour
             );
 
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
+
+        if (Input.GetKey("escape"))
+            Application.Quit();
     }
 }
