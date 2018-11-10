@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     {
         gameOver = false;
         restart = false;
-        //restartText.text = "";
+        restartText.text = "";
         gameOverText.text = "";
         score = 0;
         UpdateScore();

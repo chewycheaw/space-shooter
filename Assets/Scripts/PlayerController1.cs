@@ -18,9 +18,9 @@ public class PlayerController1 : MonoBehaviour
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
+    private float nextFire;
 
     private AudioSource audioSource;
-    private float nextFire;
 
     // Use this for initialization
     void Start()
@@ -36,7 +36,7 @@ public class PlayerController1 : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             //GameObject clone = 
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation); //as GameObject;
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation); 
             audioSource = GetComponent<AudioSource>();
             audioSource.Play();
         }
@@ -52,7 +52,8 @@ public class PlayerController1 : MonoBehaviour
         Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
         rb.velocity = movement * speed;
 
-        rb.position = new Vector3(
+        rb.position = new Vector3
+            (
             Mathf.Clamp (rb.position.x, boundary.xMin, boundary.xMax), 
             0.0f, 
             Mathf.Clamp (rb.position.z, boundary.zMin, boundary.zMax)
